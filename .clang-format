@@ -1,0 +1,7 @@
+Language: Cpp
+IndentWidth: 4
+BasedOnStyle: LLVM
+PointerAlignment: Left
+AlignAfterOpenBracket: AlwaysBreak
+BinPackArguments: false
+BinPackParameters: false
