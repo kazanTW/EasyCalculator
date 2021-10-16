@@ -23,29 +23,18 @@ def prompt_and_calculate():
 
 
 if __name__ == '__main__':
-    print("Easy Calculator v1.0_py3")
-    print("Copyright © 2021 Kazan All Rights Reserved.")
-    print("")
+    print('Easy Calculator v1.0_py3')
+    print('Copyright © 2021 Kazan All Rights Reserved.')
+    print()
 
-    n1, opt, n2 = input(
-        "Enter a two-number operation(Enter 0 and 0 to end): ").split()
-
-    if float(n1) == 0 and (float(n2) == 0):
-        cond = False
-    else:
-        cond = True
-
-    while cond == True:
-        output = calculate(float(n1), float(n2), opt)
-        print(output)
-        prompt_and_calculate()
-
-        if float(n1) == 0 and (float(n2) == 0):
-            cond = False
-        elif output == sys.float_info.min:
-            print("Invalid input. Cannot divide 0.")
-        else:
-            prompt_and_calculate()
-
-    print("Thanks for use.")
-
+    while True:
+        try:
+            output = prompt_and_calculate()
+            print(output)
+        except ValueError as e:
+            print(e)
+        except ZeroDivisionError as e:
+            print('Invalid input. Cannot divide by 0.')
+        except EOFError:
+            print('\nThanks for using.')
+            sys.exit(0)
