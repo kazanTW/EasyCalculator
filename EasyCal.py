@@ -3,7 +3,7 @@
 import sys
 
 
-def Cal(a, b, op):
+def calculate(a, b, op):
     if op == '+':
         output = a + b
     elif op == '-':
@@ -18,10 +18,10 @@ def Cal(a, b, op):
     return output
 
 
-def Cal_P():
+def prompt_and_calculate():
     n1, opt, n2 = input(
         "Enter a two-number operation(Enter 0 and 0 to end): ").split()
-    N = Cal((float)(n1), (float)(n2), opt)
+    N = calculate((float)(n1), (float)(n2), opt)
 
 
 # Program Title and copyright
@@ -38,16 +38,16 @@ else:
     COND = True
 
 while COND == True:
-    N = Cal((float)(n1), (float)(n2), opt)
+    N = calculate((float)(n1), (float)(n2), opt)
     print(N)
-    Cal_P()
+    prompt_and_calculate()
 
     if ((float)(n1) == 0) and ((float)(n2) == 0):
         COND = False
     elif output == sys.float_info.min:
         print("Invalid input. Cannot divide 0.")
     else:
-        Cal_P()
+        prompt_and_calculate()
 
 print("Thanks for use.")
 sys.exit()
