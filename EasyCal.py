@@ -1,7 +1,6 @@
 #!/usr/bin/python
 
 import sys
-import tk as tk
 
 def Cal(a, b, op):
     if op == '+':
