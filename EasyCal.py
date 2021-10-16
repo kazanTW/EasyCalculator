@@ -30,17 +30,17 @@ print("")
 n1, opt, n2 = input(
     "Enter a two-number operation(Enter 0 and 0 to end): ").split()
 
-if ((float)(n1) == 0) and ((float)(n2) == 0):
+if (float(n1) == 0) and (float(n2) == 0):
     COND = False
 else:
     COND = True
 
 while COND == True:
-    N = calculate((float)(n1), (float)(n2), opt)
+    N = calculate(float(n1), float(n2), opt)
     print(N)
     prompt_and_calculate()
 
-    if ((float)(n1) == 0) and ((float)(n2) == 0):
+    if (float(n1) == 0) and (float(n2) == 0):
         COND = False
     elif output == sys.float_info.min:
         print("Invalid input. Cannot divide 0.")
