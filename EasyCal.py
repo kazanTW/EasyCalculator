@@ -2,6 +2,7 @@
 
 import sys
 
+
 def Cal(a, b, op):
     if op == '+':
         output = a + b
@@ -16,16 +17,20 @@ def Cal(a, b, op):
             output = sys.float_info.min
     return output
 
+
 def Cal_P():
-    n1, opt, n2 = input("Enter a two-number operation(Enter 0 and 0 to end): ").split()
+    n1, opt, n2 = input(
+        "Enter a two-number operation(Enter 0 and 0 to end): ").split()
     N = Cal((float)(n1), (float)(n2), opt)
+
 
 # Program Title and copyright
 print("Easy Calculator v1.0_py3")
 print("Copyright © 2021 Kazan All Rights Reserved.")
 print("")
 
-n1, opt, n2 = input("Enter a two-number operation(Enter 0 and 0 to end): ").split()
+n1, opt, n2 = input(
+    "Enter a two-number operation(Enter 0 and 0 to end): ").split()
 
 if ((float)(n1) == 0) and ((float)(n2) == 0):
     COND = False
@@ -46,3 +51,4 @@ while COND == True:
 
 print("Thanks for use.")
 sys.exit()
+
