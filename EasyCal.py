@@ -5,17 +5,15 @@ import sys
 
 def calculate(a, b, op):
     if op == '+':
-        output = a + b
+        return a + b
     elif op == '-':
-        output = a - b
+        return a - b
     elif op == '*':
-        output = a * b
+        return a * b
     elif op == '/':
-        try:
-            output = a / b
-        except ZeroDivisionError:
-            output = sys.float_info.min
-    return output
+        return a / b
+    else:
+        raise ValueError('Invalid operator {}'.format(op))
 
 
 def prompt_and_calculate():
