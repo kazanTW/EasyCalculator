@@ -1,61 +1,53 @@
-#include <float.h>
 #include <math.h>
+#include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
 
-float Cal(float a, char opt, float b);
+float calculate(float a, char opt, float b);
 
 int main(void) {
-    float n1, n2, n;
+    float output;
+    float n1, n2;
     char op;
 
-    // Program Title and copyright
-    printf("%s", "Easy Calculator v1.0_gcc\n");
+    printf("Easy Calculator v1.0_gcc\n");
     printf("Copyright © 2021 Kazan All Rights Reserved.\n");
 
-    printf("Enter a two-numbers arithmetic(Enter 0 and 0 to end): ");
-    scanf("%f%c%f", &n1, &op, &n2);
-
-    while (n1 != 0 && n2 != 0) {
-
-        n = Cal(n1, op, n2);
-        if (n != 0 && n != -1) {
-            printf("%.3f\n", n);
-        } else if (n == FLT_MIN || n == FLT_MAX) {
-            printf("%s\n", "Invalid iuput");
+    while (true) {
+        printf("Enter a two-numbers arithmetic (Ctrl-D to exit): ");
+        int res = scanf("%f%c%f", &n1, &op, &n2);
+        if (res != 3) {
+            break;
         }
-        printf("Enter a two-numbers arithmetic(Enter 0 and 0 to end): ");
-        scanf("%f%c%f", &n1, &op, &n2);
-    }
-    printf("%s\n", "Thanks for use");
 
-    return 0;
+        output = calculate(n1, op, n2);
+        if (isnan(output) == false) {
+            printf("%.3f\n", output);
+        } else {
+            printf("Invalid input\n");
+        }
+    }
+
+    printf("Thanks for use\n");
+
+    return EXIT_SUCCESS;
 }
 
-float Cal(float a, char opt, float b) {
-    float output;
-
+float calculate(float a, char opt, float b) {
     switch (opt) {
     case '+':
-        output = a + b;
-        break;
+        return a + b;
     case '-':
-        output = a - b;
-        break;
+        return a - b;
     case '*':
-        output = a * b;
-        break;
+        return a * b;
     case '/':
         if (b == 0) {
-            output = FLT_MIN;
+            return NAN;
         } else {
-            output = a / b;
+            return a / b;
         }
-        break;
     default:
-        output = FLT_MAX;
-        break;
+        return NAN;
     }
-
-    return output;
 }
