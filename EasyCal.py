@@ -48,5 +48,4 @@ if __name__ == '__main__':
             prompt_and_calculate()
 
     print("Thanks for use.")
-    sys.exit()
 
