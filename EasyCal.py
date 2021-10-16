@@ -19,7 +19,7 @@ def calculate(a, b, op):
 def prompt_and_calculate():
     n1, opt, n2 = input(
         "Enter a two-number operation(Enter 0 and 0 to end): ").split()
-    N = calculate((float)(n1), (float)(n2), opt)
+    return calculate(float(n1), float(n2), opt)
 
 
 # Program Title and copyright
