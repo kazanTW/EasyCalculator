@@ -2,11 +2,12 @@
 .PHONY: all clean
 CC = gcc
 CFLAGS = -std=c99
+TARGET = EasyCal_gcc
 
-all: main
+all: $(TARGET)
 
-main: Calculator.c
-	$(CC) $(CFLAGS) Calculator.c -o EasyCal_gcc
+$(TARGET): Calculator.c
+	$(CC) $(CFLAGS) Calculator.c -o $(TARGET)
 
 clean:
-	rm -rf
+	rm -rf $(TARGET)
