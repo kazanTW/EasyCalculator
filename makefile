@@ -13,4 +13,4 @@ clean:
 	rm -rf $(TARGET)
 
 install: $(TARGET)
-	cp ~/EasyCal_gcc /usr/local/bin/ezcalgcc
+	cp ~/ezcalgcc /usr/local/bin/ezcalgcc
