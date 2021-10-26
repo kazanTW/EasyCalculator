@@ -11,3 +11,6 @@ $(TARGET): Calculator.c
 
 clean:
 	rm -rf $(TARGET)
+
+install: $(TARGET)
+	cp ~/EasyCal_gcc /usr/bin/ezcalgcc
