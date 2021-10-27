@@ -2,7 +2,6 @@
 
 ### For C version
 ---
-<<<<<<< HEAD
 Please use following commands:
     
     make clean
